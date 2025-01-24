@@ -53,12 +53,12 @@ A mobile workout tracking application built with **React Native Expo** to help u
 1. Clone the repository :
 
    ```bash
-   git clone https://github.com/rezakurniawan88/workout-tracker-app.git
+   git clone https://github.com/rezakurniawan88/FitHero.git
    ```
 2. Navigate to the project directory :
 
    ```bash
-   cd workout-tracker-app
+   cd FitHero
    ```
 3. Install dependencies :
    ```bash
