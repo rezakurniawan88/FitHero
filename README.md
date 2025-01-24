@@ -1,50 +1,72 @@
-# Welcome to your Expo app 👋
+# FitHero : Workout Tracker App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile workout tracking application built with **React Native Expo** to help users manage their workouts, track progress, and achieve their workout goals. The app includes features like user authentication, character progression, customizable training, and detailed workout statistics.
 
-## Get started
+---
 
-1. Install dependencies
+## Features
 
+### User Authentication
+- **Login**: Users can log in to their accounts.
+- **Register**: New users can create an account.
+
+### Character Progression
+- Each user has a **character** with a **level** and **experience points (EXP)**.
+- Gain EXP by completing workouts and level up your character.
+
+### Personal Information
+- Users can input and manage their **personal info**
+
+### Player Stats
+- Each user has **player stats** that can be upgraded
+- Users earn **upgrade points** to improve their stats.
+
+### Workout Management
+- **Today's Training**: A daily workout plan to complete.
+- **Custom Training**: Users can create their own workout routines.
+- **List Workout**: A list of predefined workouts.
+
+### Weight Goal
+- Set and track a **weight goal** to monitor progress over time.
+
+### Dark Mode
+- Toggle between **light** and **dark mode** for a personalized user experience.
+
+### Progress Tracking
+- **Streak**: Track consecutive days of completing workouts.
+- **Weekly Workout Time**: View total workout time from Monday to Sunday.
+- **Total Calories Burned**: Track calories burned during workouts.
+
+---
+
+## Technologies Used
+- **React Native Expo**: Cross-platform mobile app development framework.
+- **React Navigation**: For seamless navigation between screens.
+- **Zustand**: For managing global state.
+- **Expo Secure Store**: For local storage of user data.
+- **Expo Vector Icons**: For icons in the app.
+
+---
+
+## Installation
+
+1. Clone the repository :
+
+   ```bash
+   git clone https://github.com/rezakurniawan88/workout-tracker-app.git
+   ```
+2. Navigate to the project directory :
+
+   ```bash
+   cd workout-tracker-app
+   ```
+3. Install dependencies :
    ```bash
    npm install
    ```
-
-2. Start the app
-
+4. Start the development server :
    ```bash
-    npx expo start
+   npm start
    ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. Follow the Expo instructions to run the app on your device or emulator.
+---

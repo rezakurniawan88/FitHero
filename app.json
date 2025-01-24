@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "WorkoutTracker",
-    "slug": "WorkoutTracker",
+    "name": "FitHero",
+    "slug": "FitHero",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.rezza.fithero"
     },
     "web": {
       "bundler": "metro",
@@ -32,10 +33,19 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "cd85018c-b9d6-4f34-83d4-424cdc5e8aab"
+      }
     }
   }
 }

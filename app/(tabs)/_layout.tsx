@@ -1,45 +1,79 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import IconComponent from '@/components/icons/icons';
+import { TouchableOpacity } from 'react-native';
+import { useConnectionStore, useThemeStore } from '@/stores/store';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+    const { isDarkMode } = useThemeStore((state) => state);
+    const { isConnected } = useConnectionStore((state) => state);
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+    return (
+        <Tabs
+            screenOptions={{
+                tabBarActiveTintColor: isDarkMode ? "#FFF" : "#000",
+                headerShown: false,
+                tabBarButton: (props: any) => <TouchableOpacity {...props} activeOpacity={1} />,
+                tabBarStyle: {
+                    display: isConnected ? "flex" : "none",
+                    backgroundColor: isDarkMode ? "#181C14" : "#fff",
+                    height: 70,
+                    paddingTop: 8,
+                    borderColor: isDarkMode ? "#373737" : "#EBEBEB",
+                },
+            }}
+        >
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: 'Home',
+                    tabBarLabelStyle: {
+                        fontFamily: "PoppinsMedium",
+                        fontSize: 10,
+                    },
+                    tabBarIcon: ({ color }) => (
+                        <IconComponent name="House" size={20} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="train"
+                options={{
+                    title: 'Train',
+                    tabBarLabelStyle: {
+                        fontFamily: "PoppinsMedium",
+                        fontSize: 10,
+                    },
+                    tabBarIcon: ({ color }) => (
+                        <IconComponent name="Dumbbell" size={20} color={color} style={{ transform: [{ rotate: '135deg' }] }} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="activity"
+                options={{
+                    title: 'Activity',
+                    tabBarLabelStyle: {
+                        fontFamily: "PoppinsMedium",
+                        fontSize: 10,
+                    },
+                    tabBarIcon: ({ color }) => (
+                        <IconComponent name="ChartLine" size={20} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="settings"
+                options={{
+                    title: 'Settings',
+                    tabBarLabelStyle: {
+                        fontFamily: "PoppinsMedium",
+                        fontSize: 10,
+                    },
+                    tabBarIcon: ({ color }) => (
+                        <IconComponent name="Settings" size={20} color={color} />
+                    ),
+                }}
+            />
+        </Tabs>
+    );
 }
