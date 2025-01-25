@@ -54,10 +54,10 @@ export default function RegisterScreen() {
             setLoading(false);
             alert(response?.data?.message);
             router.push("/auth/login");
-        } catch (error) {
+        } catch (error: any) {
             setLoading(false);
-            alert("Network error. Please check your connection.");
-            console.log(error);
+            alert(error?.response?.data?.message);
+            console.log(error?.response?.data?.message);
         }
     }
 
